@@ -23,8 +23,17 @@ namespace HRM
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/sbadmin2").Include(
+                      "~/Scripts/metisMenu.js",
+                      "~/Scripts/sb-admin-2.js",
+                      "~/Scripts/morris.js",
+                      "~/Scripts/raphael.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/metisMenu.css",
+                      "~/Content/sb-admin-2.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
