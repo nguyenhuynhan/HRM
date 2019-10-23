@@ -72,6 +72,9 @@
                             <li>
                                 <a href="/HRM/TrangPhongTo.aspx"><i class="fa fa-cubes fa-fw"></i>Quản lý phòng ban</a>
                             </li>
+                            <li>
+                                <a href="/Account/Logout.aspx"><i class="fa fa-close fa-fw"></i>Thoát</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
