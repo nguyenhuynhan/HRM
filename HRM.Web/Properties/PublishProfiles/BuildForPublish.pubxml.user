@@ -24,7 +24,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2019 12:27:42</publishTime>
     </File>
     <File Include="Account/Login.aspx">
-      <publishTime>10/23/2019 12:27:42</publishTime>
+      <publishTime>10/23/2019 18:02:21</publishTime>
+    </File>
+    <File Include="Account/Logout.aspx">
+      <publishTime>10/23/2019 17:53:57</publishTime>
     </File>
     <File Include="Account/Manage.aspx">
       <publishTime>10/23/2019 12:27:42</publishTime>
@@ -66,10 +69,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2013 08:43:40</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>10/23/2019 13:15:22</publishTime>
+      <publishTime>10/23/2019 18:21:38</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>10/23/2019 13:15:22</publishTime>
+      <publishTime>10/23/2019 18:21:38</publishTime>
     </File>
     <File Include="bin/AspNet.ScriptManager.bootstrap.dll">
       <publishTime>08/22/2013 22:09:14</publishTime>
@@ -96,10 +99,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2019 13:04:38</publishTime>
     </File>
     <File Include="bin/HRM.Web.dll">
-      <publishTime>10/23/2019 13:15:17</publishTime>
+      <publishTime>10/23/2019 18:21:34</publishTime>
     </File>
     <File Include="bin/HRM.Web.pdb">
-      <publishTime>10/23/2019 13:15:17</publishTime>
+      <publishTime>10/23/2019 18:21:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
       <publishTime>07/30/2013 16:57:30</publishTime>
@@ -2052,7 +2055,220 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2019 12:27:42</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>10/23/2019 13:15:19</publishTime>
+      <publishTime>10/23/2019 18:21:36</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699532488947143.jpg">
+      <publishTime>06/15/2015 08:20:50</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699543924061194.jpg">
+      <publishTime>06/15/2015 08:39:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699614486497134.jpg">
+      <publishTime>06/15/2015 10:37:30</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699615133774156.png">
+      <publishTime>06/15/2015 10:38:34</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699615345766282.jpg">
+      <publishTime>06/15/2015 10:38:56</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699615500265119.jpg">
+      <publishTime>06/15/2015 10:39:12</publishTime>
+    </File>
+    <File Include="ProfilePicture/635699615680545430.jpg">
+      <publishTime>06/15/2015 10:39:30</publishTime>
+    </File>
+    <File Include="ProfilePicture/635732382573989584.JPG">
+      <publishTime>07/23/2015 08:50:58</publishTime>
+    </File>
+    <File Include="ProfilePicture/635754930009345056.JPG">
+      <publishTime>08/18/2015 11:10:02</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760957655742666.png">
+      <publishTime>08/25/2015 10:36:06</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760957833332823.png">
+      <publishTime>08/25/2015 10:36:24</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760958013283116.png">
+      <publishTime>08/25/2015 10:36:42</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760958438567441.png">
+      <publishTime>08/25/2015 10:37:24</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760958688321726.png">
+      <publishTime>08/25/2015 10:37:50</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760958839670383.png">
+      <publishTime>08/25/2015 10:38:04</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760959012440265.png">
+      <publishTime>08/25/2015 10:38:22</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760959257894304.png">
+      <publishTime>08/25/2015 10:38:46</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760959516789112.png">
+      <publishTime>08/25/2015 10:39:12</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760959677658313.png">
+      <publishTime>08/25/2015 10:39:28</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760960287453191.png">
+      <publishTime>08/25/2015 10:40:30</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760960452412626.png">
+      <publishTime>08/25/2015 10:40:46</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760960624642477.png">
+      <publishTime>08/25/2015 10:41:04</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760960796392301.png">
+      <publishTime>08/25/2015 10:41:20</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961225766860.png">
+      <publishTime>08/25/2015 10:42:04</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961374885389.png">
+      <publishTime>08/25/2015 10:42:18</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961524203929.png">
+      <publishTime>08/25/2015 10:42:34</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961664591959.png">
+      <publishTime>08/25/2015 10:42:48</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961794149369.png">
+      <publishTime>08/25/2015 10:43:00</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760961924026798.png">
+      <publishTime>08/25/2015 10:43:14</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962026782675.png">
+      <publishTime>08/25/2015 10:43:24</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962185921777.png">
+      <publishTime>08/25/2015 10:43:40</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962324979731.png">
+      <publishTime>08/25/2015 10:43:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962458287356.png">
+      <publishTime>08/25/2015 10:44:06</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962825208342.png">
+      <publishTime>08/25/2015 10:44:44</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760962966876445.png">
+      <publishTime>08/25/2015 10:44:58</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760963265983553.png">
+      <publishTime>08/25/2015 10:45:28</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760963499746924.png">
+      <publishTime>08/25/2015 10:45:50</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760963672176786.png">
+      <publishTime>08/25/2015 10:46:08</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760963919960959.png">
+      <publishTime>08/25/2015 10:46:32</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964123912624.png">
+      <publishTime>08/25/2015 10:46:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964329664392.png">
+      <publishTime>08/25/2015 10:47:14</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964479952988.png">
+      <publishTime>08/25/2015 10:47:28</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964623341190.png">
+      <publishTime>08/25/2015 10:47:44</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964791430804.png">
+      <publishTime>08/25/2015 10:48:00</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760964973341209.png">
+      <publishTime>08/25/2015 10:48:18</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760965117929479.png">
+      <publishTime>08/25/2015 10:48:32</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760965295399629.png">
+      <publishTime>08/25/2015 10:48:50</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760965459719028.png">
+      <publishTime>08/25/2015 10:49:06</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760965646039685.png">
+      <publishTime>08/25/2015 10:49:26</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760965934946209.png">
+      <publishTime>08/25/2015 10:49:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760966244113893.png">
+      <publishTime>08/25/2015 10:50:26</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760966391492322.png">
+      <publishTime>08/25/2015 10:50:40</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760966529490215.png">
+      <publishTime>08/25/2015 10:50:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760966757493256.png">
+      <publishTime>08/25/2015 10:51:16</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760966970315429.png">
+      <publishTime>08/25/2015 10:51:38</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760967874287133.png">
+      <publishTime>08/25/2015 10:53:08</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760968039796600.png">
+      <publishTime>08/25/2015 10:53:24</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760968238667975.png">
+      <publishTime>08/25/2015 10:53:44</publishTime>
+    </File>
+    <File Include="ProfilePicture/635760968590148078.png">
+      <publishTime>08/25/2015 10:54:20</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761113447935668.png">
+      <publishTime>08/25/2015 14:55:46</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761113734302047.png">
+      <publishTime>08/25/2015 14:56:14</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761114124414360.png">
+      <publishTime>08/25/2015 14:56:54</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761114337656557.png">
+      <publishTime>08/25/2015 14:57:14</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761114495505585.png">
+      <publishTime>08/25/2015 14:57:30</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761114641643944.png">
+      <publishTime>08/25/2015 14:57:46</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761114831024776.png">
+      <publishTime>08/25/2015 14:58:04</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761115039826719.png">
+      <publishTime>08/25/2015 14:58:24</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761115240688207.png">
+      <publishTime>08/25/2015 14:58:46</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761786205920759.png">
+      <publishTime>08/26/2015 09:37:00</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761793087494362.png">
+      <publishTime>08/26/2015 09:48:28</publishTime>
+    </File>
+    <File Include="ProfilePicture/635761793228212411.png">
+      <publishTime>08/26/2015 09:48:42</publishTime>
     </File>
     <File Include="ProfilePicture/default-user.png">
       <publishTime>03/08/2015 18:45:36</publishTime>
@@ -2169,7 +2385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2019 12:27:42</publishTime>
     </File>
     <File Include="Site.Master">
-      <publishTime>10/23/2019 12:27:42</publishTime>
+      <publishTime>10/23/2019 18:02:42</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
       <publishTime>10/23/2019 12:27:42</publishTime>
@@ -2178,7 +2394,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/23/2019 12:27:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/23/2019 13:15:17</publishTime>
+      <publishTime>10/23/2019 18:21:34</publishTime>
     </File>
   </ItemGroup>
 </Project>
