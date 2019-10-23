@@ -5,3 +5,5 @@ HRM.DataModel/obj/
 HRM.DataModel/bin/
 HRM.Lib/obj/
 HRM.Lib/bin/
+HRM.Web/HRM.Web.csproj.user
+.vs/
