@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HRM.Web.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Công ty TNHH MTV XSKT Đồng Tháp</title>
+    <asp:ContentPlaceHolder ID="HeaderMainStyleContent" runat="server">
+        <webopt:BundleReference runat="server" Path="~/Content/css" />
+        <%: Styles.Render("~/bundles/sbadmin2css") %>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="HeaderMainScriptContent" runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        <script type="text/javascript">
+            var _controlId;
+
+            function PrepareConfirmDialog(controlId, title, message) {
+                _controlId = controlId;
+                $('#MyModalLabel').text(title);
+                $('#MyModelMessage').text(message);
+                return false;
+            }
+        </script>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="HeaderSubScriptContent" runat="server" />
+    <asp:ContentPlaceHolder ID="HeaderSubStyleContent" runat="server" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <asp:ContentPlaceHolder ID="NavigationContent" runat="server">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/default.aspx">Công ty TNHH MTV XSKT Đồng Tháp</a>
+                </div>
+                <!-- /.navbar-header -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="/HRM/DanhSachNhanVien.aspx"><i class="fa fa-group fa-fw"></i>Quản lý nhân viên<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level collapse">
+                                    <li>
+                                        <a href="/HRM/DanhSachNhanVien.aspx">Danh sách nhân viên</a>
+                                    </li>
+                                    <li>
+                                        <a href="/HRM/NhapThongTinNhanVien.aspx">Thêm nhân viên</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/HRM/TrangPhongTo.aspx"><i class="fa fa-cubes fa-fw"></i>Quản lý phòng ban</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+                <!-- /.navbar-static-side -->
+            </nav>
+        </asp:ContentPlaceHolder>
+        <form runat="server">
+            <asp:ContentPlaceHolder ID="FrameworkContent" runat="server">
+                <asp:ScriptManager runat="server">
+                    <Scripts>
+                        <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                        <%--Framework Scripts--%>
+                        <asp:ScriptReference Name="MsAjaxBundle" />
+                        <asp:ScriptReference Name="jquery" />
+                        <asp:ScriptReference Name="bootstrap" />
+                        <asp:ScriptReference Name="respond" />
+                        <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                        <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                        <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                        <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                        <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                        <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                        <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                        <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                        <asp:ScriptReference Name="WebFormsBundle" />
+                        <%--Site Scripts--%>
+                    </Scripts>
+                </asp:ScriptManager>
+            </asp:ContentPlaceHolder>
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            <asp:ContentPlaceHolder ID="MainTitle" runat="server"></asp:ContentPlaceHolder>
+                        </h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+        </form>
+    </div>
+    <!-- Modal -->
+    <asp:ContentPlaceHolder ID="ModalContent" runat="server">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Xóa dữ liệu</h4>
+                    </div>
+                    <div class="modal-body" id="MyModelMessage">
+                        Bạn có chắc là sẽ xóa dữ liệu này không?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Không đồng ý</button>
+                        <button type="button" class="btn btn-primary" onclick="__doPostBack(_controlId, '')">Đồng ý</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:ContentPlaceHolder>
+    <asp:PlaceHolder ID="FooterMainScriptContent" runat="server">
+        <%: Scripts.Render("~/bundles/sbadmin2js") %>
+    </asp:PlaceHolder>
+    <asp:ContentPlaceHolder ID="FooterSubScriptContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChucVu.cs" />
+    <Compile Include="BangCapKhac.cs" />
+    <Compile Include="DiaChi.cs" />
+    <Compile Include="HocVan.cs" />
+    <Compile Include="EnumItem.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="NguoiThan.cs" />
     <Compile Include="PhongTo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrinhDoChuyenMon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

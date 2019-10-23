@@ -1,0 +1,45 @@
+﻿.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.field-title {
+    font-weight:bold;
+}
+
+.error-text {
+    font-weight:bold;
+    color:red;
+}
+
+.avatar-group {
+    text-align:center;
+}
+
+.avatar-image {
+    width:220px;
+}
+
+.avatar-button {
+    width:220px;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+
+.table-noborder {
+    border:none;
+    border-bottom:1px solid #ddd;
+}
+
+.table-noborder td {
+    border:none;
+}
+
+.table-noborder th {
+    border:none;
+    font-weight:normal;
+}
+
+.validation-text {
+    color:red;
+    font-weight:bold;
+}

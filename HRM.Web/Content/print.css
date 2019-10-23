@@ -1,0 +1,83 @@
+﻿nav {
+    display: none;
+}
+
+.page-header {
+    text-align: center;
+}
+
+#page-wrapper {
+    margin: 0 0 !important;
+    padding: 0 0 !important;
+    border: none;
+}
+
+.avatar-container {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.avatar-image {
+    width: 120px;
+}
+
+.nguoi-than {
+    margin-top: 10px;
+    width: 100%;
+    page-break-inside: auto;
+}
+
+.nguoi-than tbody {
+    page-break-inside: auto;
+}
+
+.nguoi-than tr {
+    page-break-inside: avoid !important; 
+    page-break-before: auto;
+}
+
+.none-break {
+    page-break-inside: avoid;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.field-header {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.field-title {
+    font-weight: bold;
+}
+
+.common-info {
+    margin-left: 20px;
+}
+
+.common-info > div {
+    margin: 10px 0;
+}
+
+.three-col {
+    width: 25%;
+    float: left;
+}
+
+.inner-cell {
+    padding: 5px;
+}
+
+.text-center {
+    text-align: center;
+}

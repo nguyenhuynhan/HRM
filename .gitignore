@@ -1,0 +1,7 @@
+packages/
+HRM.Web/bin/
+HRM.Web/obj/
+HRM.DataModel/obj/
+HRM.DataModel/bin/
+HRM.Lib/obj/
+HRM.Lib/bin/
