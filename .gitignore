@@ -8,3 +8,4 @@ HRM.Lib/bin/
 HRM.Web/HRM.Web.csproj.user
 .vs/
 www/
+HRM.Web/Properties/PublishProfiles/BuildForPublish.pubxml.user

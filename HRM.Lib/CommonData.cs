@@ -19,6 +19,7 @@ namespace HRM.Lib
             EnumList.Add(new EnumItem() { Type = "PhongTo", Word = "Phòng" });
             EnumList.Add(new EnumItem() { Type = "PhongTo", Word = "Tổ" });
             EnumList.Add(new EnumItem() { Type = "PhongTo", Word = "Ban" });
+            EnumList.Add(new EnumItem() { Type = "PhongTo", Word = "VPĐD" });
 
             EnumList.Add(new EnumItem() { Type = "GioiTinh", Word = "Nam" });
             EnumList.Add(new EnumItem() { Type = "GioiTinh", Word = "Nữ" });
@@ -31,6 +32,7 @@ namespace HRM.Lib
             EnumList.Add(new EnumItem() { Type = "LyLuanChinhTri", Word = "Cao cấp" });
             EnumList.Add(new EnumItem() { Type = "LyLuanChinhTri", Word = "Cử nhân" });
 
+            EnumList.Add(new EnumItem() { Type = "ChucVu", Word = "Chủ tịch - Giám đốc" });
             EnumList.Add(new EnumItem() { Type = "ChucVu", Word = "Chủ tịch" });
             EnumList.Add(new EnumItem() { Type = "ChucVu", Word = "Giám đốc" });
             EnumList.Add(new EnumItem() { Type = "ChucVu", Word = "Kiểm soát viên" });
