@@ -21,6 +21,13 @@ namespace HRM.Web.WebPage
         public IList<NhanVien> LayDanhSachNhanVien()
         {
             var db = ApplicationDbContext.Create();
+            var search = Request.QueryString["s"];
+            if (!string.IsNullOrEmpty(search))
+            {
+                var s = search.ToLower();
+                return db.DanhSachNhanVien.Where(m => m.Id.ToLower().Contains(s) || m.Ten.ToLower().Contains(s) || m.HoVaChuLot.ToLower().Contains(s)).ToList();
+            }
+
             var phongTo = Request.QueryString["phong"];
             if (string.IsNullOrEmpty(phongTo)) {
                 return db.DanhSachNhanVien.ToList();

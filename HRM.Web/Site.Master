@@ -22,6 +22,11 @@
                 $('#MyModelMessage').text(message);
                 return false;
             }
+
+            function search() {
+                var keyword = $('#search-key').val();
+                window.location = "DanhSachNhanVien?s=" + keyword;
+            }
         </script>
     </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="HeaderSubScriptContent" runat="server" />
@@ -49,9 +54,9 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                                    <input id="search-key" type="text" class="form-control" placeholder="Tìm kiếm...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">
+                                        <button class="btn btn-default" type="button" onclick="search()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
