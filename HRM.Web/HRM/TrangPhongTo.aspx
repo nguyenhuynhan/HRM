@@ -53,6 +53,9 @@
                     <asp:Button ID="btHuy" runat="server" CausesValidation="False" CommandName="Cancel" Text="Hủy" CssClass="btn btn-default" />
                 </EditItemTemplate>
                 <ItemTemplate>
+                    <asp:HyperLink ID="danhSachNhanVien" runat="server" 
+                        Text='Danh sách nhân viên'
+                        NavigateUrl='<%#"~/HRM/DanhSachNhanVien?phong=" + ((HRM.DataModel.PhongTo)GetDataItem()).Id %>'></asp:HyperLink>
                     <asp:Button ID="btSua" runat="server" CausesValidation="False" CommandName="Edit" Text="Sửa" CssClass="btn btn-default" />
                     <asp:Button ID="btXoa" runat="server" CausesValidation="False" CommandName="Delete"
                         Text="Xóa" OnClientClick='return PrepareConfirmDialog(this.name, "Xóa bộ phận", "Bạn có thật sự muốn xóa bộ phận này không?");'

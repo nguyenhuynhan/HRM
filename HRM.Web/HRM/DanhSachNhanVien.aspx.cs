@@ -21,7 +21,11 @@ namespace HRM.Web.WebPage
         public IList<NhanVien> LayDanhSachNhanVien()
         {
             var db = ApplicationDbContext.Create();
-            return db.DanhSachNhanVien.ToList();
+            var phongTo = Request.QueryString["phong"];
+            if (string.IsNullOrEmpty(phongTo)) {
+                return db.DanhSachNhanVien.ToList();
+            }
+            return db.DanhSachNhanVien.Where(m => m.PhongTo.Id == phongTo).ToList();
         }
         
         public void gvDanhSachNhanVien_DeleteItem(string id)
