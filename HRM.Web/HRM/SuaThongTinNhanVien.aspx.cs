@@ -506,7 +506,6 @@ namespace HRM.Web.HRM
                     SuaDanhSachNguoiThan(nhanVien.NguoiThan, db);
 
                     DropDownList phongTo = (DropDownList)frmMain.FindControl("ddlPhongTo");
-                    phongToOld.NhanVien.Remove(phongToOld.NhanVien.Single(m => m.Id.Equals(nhanVien.Id)));
                     nhanVien.PhongTo = db.DanhSachPhongTo.First(m => m.Id.Equals(phongTo.SelectedValue));
 
                     if (ModelState.IsValid)
