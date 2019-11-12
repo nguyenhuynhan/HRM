@@ -12,6 +12,11 @@
         DeleteMethod="gvDanhSachNhanVien_DeleteItem"
         DataKeyNames="Id">
         <Columns>
+            <asp:TemplateField HeaderText="STT">
+                <ItemTemplate>
+                    <asp:Label ID="Stt" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Mã số">
                 <ItemTemplate>
                     <asp:Image ID="HinhAnh" ImageUrl='<%# HRM.Lib.WebHelper.GetImagePath(Item.HinhAnh)  %>' Width="30px" runat="server" />

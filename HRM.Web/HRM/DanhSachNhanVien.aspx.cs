@@ -13,6 +13,7 @@ namespace HRM.Web.WebPage
     public partial class DanhSachNhanVien : System.Web.UI.Page
     {
         private bool _isEmplyList = false;
+        private int index = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,14 +26,16 @@ namespace HRM.Web.WebPage
             if (!string.IsNullOrEmpty(search))
             {
                 var s = search.ToLower();
-                return db.DanhSachNhanVien.Where(m => m.Id.ToLower().Contains(s) || m.Ten.ToLower().Contains(s) || m.HoVaChuLot.ToLower().Contains(s)).ToList();
+                return db.DanhSachNhanVien.Where(m => m.Id.ToLower().Contains(s) || m.Ten.ToLower().Contains(s) || m.HoVaChuLot.ToLower().Contains(s))
+                    .OrderBy(m => m.Ten).ThenBy(m => m.HoVaChuLot)
+                    .ToList();
             }
 
             var phongTo = Request.QueryString["phong"];
             if (string.IsNullOrEmpty(phongTo)) {
-                return db.DanhSachNhanVien.ToList();
+                return db.DanhSachNhanVien.OrderBy(m => m.Ten).ThenBy(m => m.HoVaChuLot).ToList();
             }
-            return db.DanhSachNhanVien.Where(m => m.PhongTo.Id == phongTo).ToList();
+            return db.DanhSachNhanVien.Where(m => m.PhongTo.Id == phongTo).OrderBy(m => m.Ten).ThenBy(m => m.HoVaChuLot).ToList();
         }
         
         public void gvDanhSachNhanVien_DeleteItem(string id)
