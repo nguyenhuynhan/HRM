@@ -15,10 +15,10 @@
                             <asp:Image ID="ProfilePicture" runat="server" CssClass="avatar-image" ImageUrl='<%# HRM.Lib.WebHelper.GetImagePath(Item.HinhAnh) %>' />
                         </span>
                     </div>
-                    <div class="form-group text-center">
+                    <%--<div class="form-group text-center">
                         <asp:Label ID="lblMaSoNhanVien" runat="server" Text="Mã số: " CssClass="field-title"></asp:Label>
                         <asp:Label ID="MaSoNhanVien" runat="server" Text='<%# BindItem.Id %>'></asp:Label>
-                    </div>
+                    </div>--%>
                     <div class="form-group text-center">
                         <a href='<%# "/HRM/InThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>' class="btn btn-info"><i class="fa fa-print"></i> In văn bản</a>
                         <a href='<%# "/HRM/SuaThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>' class="btn btn-success"><i class="fa fa-edit"></i> Sửa thông tin</a>

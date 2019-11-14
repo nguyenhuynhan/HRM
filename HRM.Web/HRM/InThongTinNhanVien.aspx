@@ -39,10 +39,10 @@
                         <asp:Label runat="server" Text="CMND: " CssClass="field-title"></asp:Label>
                         <asp:Label runat="server" Text='<%# Item.CMND %>'></asp:Label>
                     </div>
-                    <div>
+                    <%--<div>
                         <asp:Label runat="server" Text="Mã số: " CssClass="field-title"></asp:Label>
                         <asp:Label runat="server" Text='<%# Item.Id %>'></asp:Label>
-                    </div>
+                    </div>--%>
                     <div>
                         <asp:Label runat="server" Text="Ngày sinh: " CssClass="field-title"></asp:Label>
                         <asp:Label runat="server" Text='<%# Item.NgaySinh %>'></asp:Label>

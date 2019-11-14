@@ -14,18 +14,23 @@
         <Columns>
             <asp:TemplateField HeaderText="STT">
                 <ItemTemplate>
-                    <asp:Label ID="Stt" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+					<asp:Label ID="Stt" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Mã số">
+			<asp:TemplateField HeaderText="Hình">
+                <ItemTemplate>
+					<asp:Image ID="HinhAnh" ImageUrl='<%# HRM.Lib.WebHelper.GetImagePath(Item.HinhAnh)  %>' Width="30px" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <%--<asp:TemplateField HeaderText="Mã số">
                 <ItemTemplate>
                     <asp:Image ID="HinhAnh" ImageUrl='<%# HRM.Lib.WebHelper.GetImagePath(Item.HinhAnh)  %>' Width="30px" runat="server" />
                     <asp:Label ID="Maso" runat="server" Text='<%# Item.Id %>'></asp:Label>
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
             <asp:TemplateField HeaderText="Họ và tên">
                 <ItemTemplate>
-                    <asp:HyperLink ID="HoTen" runat="server" 
+                    <asp:HyperLink ID="HoTen" runat="server" style="white-space:nowrap"
                         Text='<%# Item.HoVaChuLot + " " + Item.Ten %>'
                         NavigateUrl='<%# "~/HRM/ThongTinNhanVien.aspx?masonhanvien=" + Item.Id %>'></asp:HyperLink>
                 </ItemTemplate>
@@ -41,11 +46,13 @@
             <asp:BoundField DataField="DienThoai" HeaderText="Số điện thoại" />
             <asp:TemplateField ShowHeader="False" ItemStyle-CssClass="not-print">
                 <ItemTemplate>
-                    <a onclick='OpenNewWindow("<%# "/HRM/InThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>")' class="btn btn-default"><i class="fa fa-print" title="In văn bản"></i></a>
-                    <a href='<%# "/HRM/SuaThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>' class="btn btn-info"><i class="fa fa-edit" title="Sửa thông tin"></i></a>
-                    <asp:Button ID="btXoa" runat="server" CausesValidation="False" CommandName="Delete"
-                        Text="x" OnClientClick='return PrepareConfirmDialog(this.name, "Xóa thông tin nhân viên", "Bạn có thật sự muốn xóa thông tin nhân viên này không? Sau khi xóa bạn không thể phục hồi được!");'
-                        CssClass="btn btn-danger" data-toggle="modal" data-target="#myModal" ToolTip="Xóa thông tin" Font-Bold="true" />
+					<div style="white-space: nowrap;">
+						<a onclick='OpenNewWindow("<%# "/HRM/InThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>")' class="btn btn-default"><i class="fa fa-print" title="In văn bản"></i></a>
+						<a href='<%# "/HRM/SuaThongTinNhanVien.aspx?masonhanvien=" + Item.Id  %>' class="btn btn-info"><i class="fa fa-edit" title="Sửa thông tin"></i></a>
+						<asp:Button ID="btXoa" runat="server" CausesValidation="False" CommandName="Delete"
+							Text="x" OnClientClick='return PrepareConfirmDialog(this.name, "Xóa thông tin nhân viên", "Bạn có thật sự muốn xóa thông tin nhân viên này không? Sau khi xóa bạn không thể phục hồi được!");'
+							CssClass="btn btn-danger" data-toggle="modal" data-target="#myModal" ToolTip="Xóa thông tin" Font-Bold="true" />
+					</div>                    
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
