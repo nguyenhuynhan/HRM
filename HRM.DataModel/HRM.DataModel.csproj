@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BangCapKhac.cs" />
     <Compile Include="DiaChi.cs" />
+    <Compile Include="CongTac.cs" />
     <Compile Include="HocVan.cs" />
     <Compile Include="EnumItem.cs" />
     <Compile Include="NhanVien.cs" />

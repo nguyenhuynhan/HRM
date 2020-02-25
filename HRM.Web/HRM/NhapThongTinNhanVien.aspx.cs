@@ -211,6 +211,56 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhCongTac
+
+        protected void gvCongTac_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                List<CongTac> dsCongTac = new List<CongTac>();
+                dsCongTac.Add(new CongTac());
+                gv.DataSource = dsCongTac;
+            }
+        }
+
+        protected List<CongTac> LayDanhSachCongTac()
+        {
+            List<CongTac> dsCongTac = new List<CongTac>();
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+
+            foreach (GridViewRow row in gvCongTac.Rows)
+            {
+                CongTac congTac = new CongTac();
+                congTac.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                congTac.DonViCongTac = ((TextBox)row.FindControl("DonViCongTac")).Text;
+                congTac.ChucVu = ((TextBox)row.FindControl("ChucVu")).Text;
+                dsCongTac.Add(congTac);
+            }
+
+            return dsCongTac;
+        }
+
+        protected void btThemCongTac_Click(object sender, EventArgs e)
+        {
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+            List<CongTac> dsCongTac = LayDanhSachCongTac();
+            dsCongTac.Add(new CongTac());
+            gvCongTac.DataSource = dsCongTac;
+            gvCongTac.DataBind();
+        }
+
+        protected void gvCongTac_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+            List<CongTac> dsHocVan = LayDanhSachCongTac();
+            dsHocVan.RemoveAt(e.RowIndex);
+            gvCongTac.DataSource = dsHocVan;
+            gvCongTac.DataBind();
+        }
+
+        #endregion
+
         #region NguoiThan
 
         protected List<NguoiThan> LayDanhSachNguoiThan()

@@ -316,6 +316,48 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhCongTac" runat="server" Text="Quá trình công tác" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvCongTac" runat="server"
+                            AutoGenerateColumns="False"
+                            ItemType="HRM.DataModel.CongTac"
+                            DataKeyNames="Id"
+                            OnLoad="gvCongTac_Load"
+                            CssClass="table table-striped table-hover table-noborder"
+                            OnRowDeleting="gvCongTac_RowDeleting">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
+                                        <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian công tác" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Đơn vị công tác">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="DonViCongTac" runat="server" CssClass="form-control" Text="<%#BindItem.DonViCongTac %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valDonViCongTac" runat="server" ErrorMessage="Chưa nhập đơn vị công tác" ControlToValidate="DonViCongTac" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Chức vụ">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="ChucVu" runat="server" CssClass="form-control" Text="<%#BindItem.ChucVu %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valChucVu" runat="server" ErrorMessage="Chưa nhập chức vụ trong khoảng thời gian này" ControlToValidate="ChucVu" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField ShowHeader="False" ItemStyle-HorizontalAlign="Right">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btXoa" runat="server" CausesValidation="False" CommandName="Delete" Text="Xóa" CssClass="btn btn-danger"></asp:Button>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:Button ID="btThemCongTac" runat="server" Text="Thêm quá trình công tác" CssClass="btn btn-info" OnClick="btThemCongTac_Click" CausesValidation="false" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
                         <asp:Label ID="lbNguoiThan" runat="server" Text="Người thân" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="NguoiThan" runat="server"
                             AutoGenerateColumns="False"

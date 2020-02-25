@@ -284,6 +284,104 @@ namespace HRM.Web.HRM
         }
 
         #endregion
+        
+        #region QuaTrinhCongTac
+
+        protected void gvCongTac_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                gv.DataSource = ((NhanVien)frmMain.DataItem).QuaTrinhCongTac;
+                gv.DataBind();
+            }
+        }
+
+        protected List<CongTac> LayDanhSachCongTac()
+        {
+            List<CongTac> dsCongTac = new List<CongTac>();
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+
+            foreach (GridViewRow row in gvCongTac.Rows)
+            {
+                CongTac congTac = new CongTac();
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                if (!string.IsNullOrEmpty(id))
+                {
+                    congTac.Id = int.Parse(id);
+                }
+                congTac.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                congTac.DonViCongTac = ((TextBox)row.FindControl("DonViCongTac")).Text;
+                congTac.ChucVu = ((TextBox)row.FindControl("ChucVu")).Text;
+                dsCongTac.Add(congTac);
+            }
+
+            return dsCongTac;
+        }
+
+        protected void SuaDanhSachCongTac(IList<CongTac> dsSua, ApplicationDbContext db)
+        {
+            IList<CongTac> dsCongTac = new List<CongTac>();
+            IList<int> existedIds = new List<int>();
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+
+            foreach (GridViewRow row in gvCongTac.Rows)
+            {
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                CongTac trackingItem = dsSua.FirstOrDefault(m => m.Id.ToString().Equals(id));
+                string ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                string DonViCongTac = ((TextBox)row.FindControl("DonViCongTac")).Text;
+                string ChucVu = ((TextBox)row.FindControl("ChucVu")).Text;
+                if (trackingItem != null)
+                {
+                    trackingItem.ThoiGian = ThoiGian;
+                    trackingItem.DonViCongTac = DonViCongTac;
+                    trackingItem.ChucVu = ChucVu;
+                    existedIds.Add(int.Parse(id));
+                }
+                else
+                {
+                    CongTac congTac = new CongTac();
+                    congTac.ThoiGian = ThoiGian;
+                    congTac.DonViCongTac = DonViCongTac;
+                    congTac.ChucVu = ChucVu;
+                    dsCongTac.Add(congTac);
+                }
+            }
+            for (int i = 0; i < dsSua.Count; i++)
+            {
+                var entity = dsSua[i];
+                if (!existedIds.Contains(entity.Id))
+                {
+                    db.DanhSachCongTac.Remove(entity);
+                    dsSua.Remove(entity);
+                }
+            }
+            foreach (var item in dsCongTac)
+            {
+                dsSua.Add(item);
+            }
+        }
+
+        protected void btThemCongTac_Click(object sender, EventArgs e)
+        {
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+            List<CongTac> dsCongTac = LayDanhSachCongTac();
+            dsCongTac.Add(new CongTac());
+            gvCongTac.DataSource = dsCongTac;
+            gvCongTac.DataBind();
+        }
+
+        protected void gvCongTac_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvCongTac = (GridView)frmMain.FindControl("gvCongTac");
+            List<CongTac> dsHocVan = LayDanhSachCongTac();
+            dsHocVan.RemoveAt(e.RowIndex);
+            gvCongTac.DataSource = dsHocVan;
+            gvCongTac.DataBind();
+        }
+
+        #endregion
 
         #region NguoiThan
 
@@ -503,6 +601,7 @@ namespace HRM.Web.HRM
                     TryUpdateModel(nhanVien);
                     SuaDanhSachHocVan(nhanVien.TrinhDo, db);
                     SuaDanhSachBangCap(nhanVien.BangCapKhac, db);
+                    SuaDanhSachCongTac(nhanVien.QuaTrinhCongTac, db);
                     SuaDanhSachNguoiThan(nhanVien.NguoiThan, db);
 
                     DropDownList phongTo = (DropDownList)frmMain.FindControl("ddlPhongTo");

@@ -138,6 +138,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhCongTac" runat="server" Text="Quá trình công tác" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvCongtac" runat="server"
+                            AutoGenerateColumns="False"
+                            ItemType="HRM.DataModel.CongTac"
+                            CssClass="table table-striped table-hover table-noborder"
+                            DataSource='<%#Item.QuaTrinhCongTac %>'>
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Đơn vị">
+                                    <ItemTemplate>
+                                        <asp:Label ID="DonVi" runat="server" Text='<%# Item.DonViCongTac %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Chức vụ">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ChucVu" runat="server" Text='<%# Item.ChucVu %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
                         <asp:Label ID="Label1" runat="server" Text="Người thân" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="NguoiThan" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.NguoiThan"
                             DataSource='<%# Item.NguoiThan %>' CssClass="table table-striped table-hover table-noborder" ShowHeader="false">

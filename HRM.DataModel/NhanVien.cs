@@ -57,6 +57,9 @@ namespace HRM.DataModel
         [Display(Name = "Bằng cấp khác")]
         public virtual IList<BangCapKhac> BangCapKhac { get; set; }
 
+        [Display(Name = "Quá trình công tác")]
+        public virtual IList<CongTac> QuaTrinhCongTac { get; set; }
+
         [Display(Name = "Hệ số lương")]
         public float HeSoLuong { get; set; }
 

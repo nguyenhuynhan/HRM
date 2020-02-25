@@ -109,7 +109,33 @@
             <div class="clear-fix"></div>
             <div>
                 <div>
-                    <div class="field-header">II. DANH SÁCH NGƯỜI THÂN</div>
+                    <div class="field-header">II. TÓM TẮT QUÁ TRÌNH CÔNG TÁC</div>
+                    <asp:GridView ID="gvCongTac" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.CongTac"
+                        DataSource='<%# Item.QuaTrinhCongTac %>' CssClass="table table-striped table-hover table-noborder nguoi-than">
+                        <Columns>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Thời gian">
+                                <ItemTemplate>
+                                    <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Đơn vị công tác">
+                                <ItemTemplate>
+                                    <asp:Label ID="DonViCongTac" runat="server" Text='<%# Item.DonViCongTac %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Chức vụ">
+                                <ItemTemplate>
+                                    <asp:Label ID="ChucVu" runat="server" Text='<%# Item.ChucVu %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <div class="field-header">III. DANH SÁCH NGƯỜI THÂN</div>
                     <asp:GridView ID="NguoiThan" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.NguoiThan"
                         DataSource='<%# Item.NguoiThan %>' CssClass="table table-striped table-hover table-noborder nguoi-than" ShowHeader="false">
                         <Columns>
