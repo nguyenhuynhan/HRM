@@ -56,8 +56,12 @@
                         <asp:Label runat="server" Text='<%# Item.TinhTrangHonNhan %>'></asp:Label>
                     </div>
                     <div>
-                        <asp:Label runat="server" Text="Thường trú: " CssClass="field-title"></asp:Label>
+                        <asp:Label runat="server" Text="Quê quán: " CssClass="field-title"></asp:Label>
                         <asp:Label runat="server" Text='<%# HienThiDiaChi(Item.QueQuan) %>'></asp:Label>
+                    </div>
+                    <div runat="server" visible='<%# Item.HienTai != null && !string.IsNullOrEmpty(HienThiDiaChi(Item.HienTai)) %>'>
+                        <asp:Label runat="server" Text="Thường trú: " CssClass="field-title"></asp:Label>
+                        <asp:Label runat="server" Text='<%# HienThiDiaChi(Item.HienTai) %>'></asp:Label>
                     </div>
                     <div>
                         <asp:Label runat="server" Text="Đơn vị: " CssClass="field-title"></asp:Label>

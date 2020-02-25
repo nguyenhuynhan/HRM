@@ -47,8 +47,12 @@
                             <asp:Label ID="TinhTrangHonNhan" runat="server" Text='<%# BindItem.TinhTrangHonNhan %>'></asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblThuongTru" runat="server" Text="Thường trú: " CssClass="field-title"></asp:Label>
-                            <asp:Label ID="ThuongTru" runat="server" Text='<%# HienThiDiaChi(Item.QueQuan) %>'></asp:Label>
+                            <asp:Label ID="lblQueQuan" runat="server" Text="Quê quán: " CssClass="field-title"></asp:Label>
+                            <asp:Label ID="QueQuan" runat="server" Text='<%# HienThiDiaChi(Item.QueQuan) %>'></asp:Label>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblHienTai" runat="server" Text="Thường trú: " CssClass="field-title"></asp:Label>
+                            <asp:Label ID="HienTai" runat="server" Text='<%# HienThiDiaChi(Item.HienTai) %>'></asp:Label>
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lblPhongTo" runat="server" Text="Đơn vị: " CssClass="field-title"></asp:Label>
