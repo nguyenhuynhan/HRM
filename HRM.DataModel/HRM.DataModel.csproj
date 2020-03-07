@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangCapKhac.cs" />
+    <Compile Include="KyLuat.cs" />
+    <Compile Include="KhenThuong.cs" />
+    <Compile Include="TangLuong.cs" />
     <Compile Include="DiaChi.cs" />
     <Compile Include="CongTac.cs" />
     <Compile Include="HocVan.cs" />

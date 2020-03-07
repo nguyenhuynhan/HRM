@@ -60,6 +60,15 @@ namespace HRM.DataModel
         [Display(Name = "Quá trình công tác")]
         public virtual IList<CongTac> QuaTrinhCongTac { get; set; }
 
+        [Display(Name = "Quá trình tăng lương")]
+        public virtual IList<TangLuong> QuaTrinhTangLuong { get; set; }
+
+        [Display(Name = "Quá trình khen thưởng")]
+        public virtual IList<KhenThuong> QuaTrinhKhenThuong { get; set; }
+
+        [Display(Name = "Quá trình kỷ luật")]
+        public virtual IList<KyLuat> QuaTrinhKyLuat { get; set; }
+
         [Display(Name = "Hệ số lương")]
         public float HeSoLuong { get; set; }
 

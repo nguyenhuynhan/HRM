@@ -36,6 +36,9 @@ namespace HRM.Web.Models
         public DbSet<BangCapKhac> DanhSachBangCapKhac { get; set; }
         public DbSet<HocVan> DanhSachHocVan { get; set; }
         public DbSet<CongTac> DanhSachCongTac { get; set; }
+        public DbSet<TangLuong> DanhSachTangLuong { get; set; }
+        public DbSet<KhenThuong> DanhSachKhenThuong { get; set; }
+        public DbSet<KyLuat> DanhSachKyLuat { get; set; }
         public DbSet<DiaChi> DanhSachDiaChi { get; set; }
         public DbSet<NguoiThan> DanhSachNguoiThan { get; set; }
         public DbSet<EnumItem> LookupList;
