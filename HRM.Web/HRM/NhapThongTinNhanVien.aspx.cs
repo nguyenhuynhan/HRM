@@ -365,6 +365,56 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhKyLuat
+
+        protected void gvKyLuat_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                List<KyLuat> dsKyLuat = new List<KyLuat>();
+                dsKyLuat.Add(new KyLuat());
+                gv.DataSource = dsKyLuat;
+            }
+        }
+
+        protected List<KyLuat> LayDanhSachKyLuat()
+        {
+            List<KyLuat> dsKyLuat = new List<KyLuat>();
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+
+            foreach (GridViewRow row in gvKyLuat.Rows)
+            {
+                KyLuat kyLuat = new KyLuat();
+                kyLuat.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                kyLuat.LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                kyLuat.CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                dsKyLuat.Add(kyLuat);
+            }
+
+            return dsKyLuat;
+        }
+
+        protected void btThemKyLuat_Click(object sender, EventArgs e)
+        {
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+            List<KyLuat> dsKyLuat = LayDanhSachKyLuat();
+            dsKyLuat.Add(new KyLuat());
+            gvKyLuat.DataSource = dsKyLuat;
+            gvKyLuat.DataBind();
+        }
+
+        protected void gvKyLuat_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+            List<KyLuat> dsKyLuat = LayDanhSachKyLuat();
+            dsKyLuat.RemoveAt(e.RowIndex);
+            gvKyLuat.DataSource = dsKyLuat;
+            gvKyLuat.DataBind();
+        }
+
+        #endregion
+
 
         #region NguoiThan
 
