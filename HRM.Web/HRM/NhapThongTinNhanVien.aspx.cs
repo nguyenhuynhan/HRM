@@ -315,6 +315,56 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhKhenThuong
+
+        protected void gvKhenThuong_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                List<KhenThuong> dsKhenThuong = new List<KhenThuong>();
+                dsKhenThuong.Add(new KhenThuong());
+                gv.DataSource = dsKhenThuong;
+            }
+        }
+
+        protected List<KhenThuong> LayDanhSachKhenThuong()
+        {
+            List<KhenThuong> dsKhenThuong = new List<KhenThuong>();
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+
+            foreach (GridViewRow row in gvKhenThuong.Rows)
+            {
+                KhenThuong khenThuong = new KhenThuong();
+                khenThuong.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                khenThuong.LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                khenThuong.CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                dsKhenThuong.Add(khenThuong);
+            }
+
+            return dsKhenThuong;
+        }
+
+        protected void btThemKhenThuong_Click(object sender, EventArgs e)
+        {
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+            List<KhenThuong> dsKhenThuong = LayDanhSachKhenThuong();
+            dsKhenThuong.Add(new KhenThuong());
+            gvKhenThuong.DataSource = dsKhenThuong;
+            gvKhenThuong.DataBind();
+        }
+
+        protected void gvKhenThuong_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+            List<KhenThuong> dsKhenThuong = LayDanhSachKhenThuong();
+            dsKhenThuong.RemoveAt(e.RowIndex);
+            gvKhenThuong.DataSource = dsKhenThuong;
+            gvKhenThuong.DataBind();
+        }
+
+        #endregion
+
 
         #region NguoiThan
 
