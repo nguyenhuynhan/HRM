@@ -261,6 +261,61 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhTangLuong
+
+        protected void gvTangLuong_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                List<TangLuong> dsTangLuong = new List<TangLuong>();
+                dsTangLuong.Add(new TangLuong());
+                gv.DataSource = dsTangLuong;
+            }
+        }
+
+        protected List<TangLuong> LayDanhSachTangLuong()
+        {
+            List<TangLuong> dsTangLuong = new List<TangLuong>();
+            GridView gvTangLuong = (GridView)frmMain.FindControl("gvTangLuong");
+
+            foreach (GridViewRow row in gvTangLuong.Rows)
+            {
+                TangLuong tangLuong = new TangLuong();
+                double bacLuong = 0;
+                double heSoLuong = 0;
+                double.TryParse(((TextBox) row.FindControl("BacLuong")).Text, out bacLuong);
+                double.TryParse(((TextBox)row.FindControl("HeSoLuong")).Text, out heSoLuong);
+                tangLuong.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                tangLuong.BacLuong = bacLuong;
+                tangLuong.HeSoLuong = heSoLuong;
+                dsTangLuong.Add(tangLuong);
+            }
+
+            return dsTangLuong;
+        }
+
+        protected void btThemTangLuong_Click(object sender, EventArgs e)
+        {
+            GridView gvTangLuong = (GridView)frmMain.FindControl("gvTangLuong");
+            List<TangLuong> dsTangLuong = LayDanhSachTangLuong();
+            dsTangLuong.Add(new TangLuong());
+            gvTangLuong.DataSource = dsTangLuong;
+            gvTangLuong.DataBind();
+        }
+
+        protected void gvTangLuong_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvTangLuong = (GridView)frmMain.FindControl("gvTangLuong");
+            List<TangLuong> dsHocVan = LayDanhSachTangLuong();
+            dsHocVan.RemoveAt(e.RowIndex);
+            gvTangLuong.DataSource = dsHocVan;
+            gvTangLuong.DataBind();
+        }
+
+        #endregion
+
+
         #region NguoiThan
 
         protected List<NguoiThan> LayDanhSachNguoiThan()
