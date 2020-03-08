@@ -165,6 +165,100 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Diễn biến tăng lương" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvTangLuong" runat="server"
+                                      AutoGenerateColumns="False"
+                                      ItemType="HRM.DataModel.TangLuong"
+                                      CssClass="table table-striped table-hover table-noborder"
+                                      DataSource='<%#Item.QuaTrinhTangLuong %>'>
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Bậc lương">
+                                    <ItemTemplate>
+                                        <asp:Label ID="BacLuong" runat="server" Text='<%# Item.BacLuong %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Hệ số lương">
+                                    <ItemTemplate>
+                                        <asp:Label ID="HeSoLuong" runat="server" Text='<%# Item.HeSoLuong %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhKhenThuong" runat="server" Text="Khen thưởng" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvKhenThuong" runat="server"
+                                      AutoGenerateColumns="False"
+                                      ItemType="HRM.DataModel.KhenThuong"
+                                      CssClass="table table-striped table-hover table-noborder"
+                                      DataSource='<%#Item.QuaTrinhKhenThuong %>'>
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Lý do, hình thức">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LyDoHinhThuc" runat="server" Text='<%# Item.LyDoHinhThuc %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Cấp quyết định">
+                                    <ItemTemplate>
+                                        <asp:Label ID="CapQuyetDinh" runat="server" Text='<%# Item.CapQuyetDinh %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhKyLuat" runat="server" Text="Kỷ luật" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvKyLuat" runat="server"
+                                        AutoGenerateColumns="False"
+                                        ItemType="HRM.DataModel.KyLuat"
+                                        CssClass="table table-striped table-hover table-noborder"
+                                        DataSource='<%#Item.QuaTrinhKyLuat %>'>
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Lý do, hình thức">
+                                    <ItemTemplate>
+                                        <asp:Label ID="LyDoHinhThuc" runat="server" Text='<%# Item.LyDoHinhThuc %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Cấp quyết định">
+                                    <ItemTemplate>
+                                        <asp:Label ID="CapQuyetDinh" runat="server" Text='<%# Item.CapQuyetDinh %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">

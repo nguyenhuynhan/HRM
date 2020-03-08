@@ -135,7 +135,85 @@
             <br />
             <div>
                 <div>
-                    <div class="field-header">III. DANH SÁCH NGƯỜI THÂN</div>
+                    <div class="field-header">III. DIỄN BIẾN TĂNG LƯƠNG</div>
+                    <asp:GridView ID="gvTangLuong" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.TangLuong"
+                                  DataSource='<%# Item.QuaTrinhTangLuong %>' CssClass="table table-striped table-hover table-noborder nguoi-than">
+                        <Columns>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Thời gian">
+                                <ItemTemplate>
+                                    <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Bậc lương">
+                                <ItemTemplate>
+                                    <asp:Label ID="BacLuong" runat="server" Text='<%# Item.BacLuong %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Hệ số lương">
+                                <ItemTemplate>
+                                    <asp:Label ID="HeSoLuong" runat="server" Text='<%# Item.HeSoLuong %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <div class="field-header">IV. KHEN THƯỞNG</div>
+                    <asp:GridView ID="gvKhenThuong" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.KhenThuong"
+                                  DataSource='<%# Item.QuaTrinhKhenThuong %>' CssClass="table table-striped table-hover table-noborder nguoi-than">
+                        <Columns>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Thời gian">
+                                <ItemTemplate>
+                                    <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Lý do, hình thức">
+                                <ItemTemplate>
+                                    <asp:Label ID="LyDoHinhThuc" runat="server" Text='<%# Item.LyDoHinhThuc %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Cấp quyết định">
+                                <ItemTemplate>
+                                    <asp:Label ID="CapQuyetDinh" runat="server" Text='<%# Item.CapQuyetDinh %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <div class="field-header">V. KỶ LUẬT</div>
+                    <asp:GridView ID="gvKyLuat" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.KyLuat"
+                                  DataSource='<%# Item.QuaTrinhKyLuat %>' CssClass="table table-striped table-hover table-noborder nguoi-than">
+                        <Columns>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Thời gian">
+                                <ItemTemplate>
+                                    <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Lý do, hình thức">
+                                <ItemTemplate>
+                                    <asp:Label ID="LyDoHinhThuc" runat="server" Text='<%# Item.LyDoHinhThuc %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField ItemStyle-CssClass="inner-cell" HeaderText="Cấp quyết định">
+                                <ItemTemplate>
+                                    <asp:Label ID="CapQuyetDinh" runat="server" Text='<%# Item.CapQuyetDinh %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <div class="field-header">VI. DANH SÁCH NGƯỜI THÂN</div>
                     <asp:GridView ID="NguoiThan" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.NguoiThan"
                         DataSource='<%# Item.NguoiThan %>' CssClass="table table-striped table-hover table-noborder nguoi-than" ShowHeader="false">
                         <Columns>
