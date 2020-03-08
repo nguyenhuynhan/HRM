@@ -588,6 +588,104 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhKyLuat
+
+        protected void gvKyLuat_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                gv.DataSource = ((NhanVien)frmMain.DataItem).QuaTrinhKyLuat;
+                gv.DataBind();
+            }
+        }
+
+        protected List<KyLuat> LayDanhSachKyLuat()
+        {
+            List<KyLuat> dsKyLuat = new List<KyLuat>();
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+
+            foreach (GridViewRow row in gvKyLuat.Rows)
+            {
+                KyLuat kyLuat = new KyLuat();
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                if (!string.IsNullOrEmpty(id))
+                {
+                    kyLuat.Id = int.Parse(id);
+                }
+                kyLuat.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                kyLuat.LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                kyLuat.CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                dsKyLuat.Add(kyLuat);
+            }
+
+            return dsKyLuat;
+        }
+
+        protected void SuaDanhSachKyLuat(IList<KyLuat> dsSua, ApplicationDbContext db)
+        {
+            IList<KyLuat> dsKyLuat = new List<KyLuat>();
+            IList<int> existedIds = new List<int>();
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+
+            foreach (GridViewRow row in gvKyLuat.Rows)
+            {
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                KyLuat trackingItem = dsSua.FirstOrDefault(m => m.Id.ToString().Equals(id));
+                string ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                string LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                string CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                if (trackingItem != null)
+                {
+                    trackingItem.ThoiGian = ThoiGian;
+                    trackingItem.LyDoHinhThuc = LyDoHinhThuc;
+                    trackingItem.CapQuyetDinh = CapQuyetDinh;
+                    existedIds.Add(int.Parse(id));
+                }
+                else
+                {
+                    KyLuat kyLuat = new KyLuat();
+                    kyLuat.ThoiGian = ThoiGian;
+                    kyLuat.LyDoHinhThuc = LyDoHinhThuc;
+                    kyLuat.CapQuyetDinh = CapQuyetDinh;
+                    dsKyLuat.Add(kyLuat);
+                }
+            }
+            for (int i = 0; i < dsSua.Count; i++)
+            {
+                var entity = dsSua[i];
+                if (!existedIds.Contains(entity.Id))
+                {
+                    db.DanhSachKyLuat.Remove(entity);
+                    dsSua.Remove(entity);
+                }
+            }
+            foreach (var item in dsKyLuat)
+            {
+                dsSua.Add(item);
+            }
+        }
+
+        protected void btThemKyLuat_Click(object sender, EventArgs e)
+        {
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+            List<KyLuat> dsKyLuat = LayDanhSachKyLuat();
+            dsKyLuat.Add(new KyLuat());
+            gvKyLuat.DataSource = dsKyLuat;
+            gvKyLuat.DataBind();
+        }
+
+        protected void gvKyLuat_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvKyLuat = (GridView)frmMain.FindControl("gvKyLuat");
+            List<KyLuat> dsKyLuat = LayDanhSachKyLuat();
+            dsKyLuat.RemoveAt(e.RowIndex);
+            gvKyLuat.DataSource = dsKyLuat;
+            gvKyLuat.DataBind();
+        }
+
+        #endregion
+
         #region NguoiThan
 
         protected List<NguoiThan> LayDanhSachNguoiThan()
