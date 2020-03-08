@@ -372,7 +372,7 @@
                                     <ItemTemplate>
                                         <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian công tác" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian tăng lương" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Bậc lương">
@@ -395,6 +395,49 @@
                             </Columns>
                         </asp:GridView>
                         <asp:Button ID="btThemTangLuong" runat="server" Text="Thêm diễn biến tăng lương" CssClass="btn btn-info" OnClick="btThemTangLuong_Click" CausesValidation="false" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <asp:Label ID="lbQuaTrinhKhenThuong" runat="server" Text="Diễn biến tăng lương" CssClass="field-title"></asp:Label><br />
+                        <asp:GridView ID="gvKhenThuong" runat="server"
+                            AutoGenerateColumns="False"
+                            ItemType="HRM.DataModel.KhenThuong"
+                            DataKeyNames="Id"
+                            OnLoad="gvKhenThuong_Load"
+                            CssClass="table table-striped table-hover table-noborder"
+                            OnRowDeleting="gvKhenThuong_RowDeleting">
+                            <Columns>
+                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                    <ItemTemplate>
+                                        <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
+                                        <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian khen thưởng" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Lý do, hình thức">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="LyDoHinhThuc" runat="server" CssClass="form-control" Text="<%#BindItem.LyDoHinhThuc %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valLyDoHinhThuc" runat="server" ErrorMessage="Chưa nhập lý do, hình thức" ControlToValidate="LyDoHinhThuc" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Cấp quyết định">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="CapQuyetDinh" runat="server" CssClass="form-control" Text="<%#BindItem.CapQuyetDinh %>"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valCapQuyetDinh" runat="server" ErrorMessage="Chưa nhập cấp quyết định" ControlToValidate="CapQuyetDinh" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField ShowHeader="False" ItemStyle-HorizontalAlign="Right">
+                                    <ItemTemplate>
+                                        <asp:Button ID="btXoa" runat="server" CausesValidation="False" CommandName="Delete" Text="Xóa" CssClass="btn btn-danger"></asp:Button>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:Button ID="btThemKhenThuong" runat="server" Text="Thêm khen thưởng" CssClass="btn btn-info" OnClick="btThemKhenThuong_Click" CausesValidation="false" />
                     </div>
                 </div>
             </div>

@@ -490,6 +490,104 @@ namespace HRM.Web.HRM
 
         #endregion
 
+        #region QuaTrinhKhenThuong
+
+        protected void gvKhenThuong_Load(object sender, EventArgs e)
+        {
+            GridView gv = (GridView)sender;
+            if (!IsPostBack)
+            {
+                gv.DataSource = ((NhanVien)frmMain.DataItem).QuaTrinhKhenThuong;
+                gv.DataBind();
+            }
+        }
+
+        protected List<KhenThuong> LayDanhSachKhenThuong()
+        {
+            List<KhenThuong> dsKhenThuong = new List<KhenThuong>();
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+
+            foreach (GridViewRow row in gvKhenThuong.Rows)
+            {
+                KhenThuong khenThuong = new KhenThuong();
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                if (!string.IsNullOrEmpty(id))
+                {
+                    khenThuong.Id = int.Parse(id);
+                }
+                khenThuong.ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                khenThuong.LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                khenThuong.CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                dsKhenThuong.Add(khenThuong);
+            }
+
+            return dsKhenThuong;
+        }
+
+        protected void SuaDanhSachKhenThuong(IList<KhenThuong> dsSua, ApplicationDbContext db)
+        {
+            IList<KhenThuong> dsKhenThuong = new List<KhenThuong>();
+            IList<int> existedIds = new List<int>();
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+
+            foreach (GridViewRow row in gvKhenThuong.Rows)
+            {
+                string id = ((HiddenField)row.FindControl("Id")).Value;
+                KhenThuong trackingItem = dsSua.FirstOrDefault(m => m.Id.ToString().Equals(id));
+                string ThoiGian = ((TextBox)row.FindControl("ThoiGian")).Text;
+                string LyDoHinhThuc = ((TextBox)row.FindControl("LyDoHinhThuc")).Text;
+                string CapQuyetDinh = ((TextBox)row.FindControl("CapQuyetDinh")).Text;
+                if (trackingItem != null)
+                {
+                    trackingItem.ThoiGian = ThoiGian;
+                    trackingItem.LyDoHinhThuc = LyDoHinhThuc;
+                    trackingItem.CapQuyetDinh = CapQuyetDinh;
+                    existedIds.Add(int.Parse(id));
+                }
+                else
+                {
+                    KhenThuong khenThuong = new KhenThuong();
+                    khenThuong.ThoiGian = ThoiGian;
+                    khenThuong.LyDoHinhThuc = LyDoHinhThuc;
+                    khenThuong.CapQuyetDinh = CapQuyetDinh;
+                    dsKhenThuong.Add(khenThuong);
+                }
+            }
+            for (int i = 0; i < dsSua.Count; i++)
+            {
+                var entity = dsSua[i];
+                if (!existedIds.Contains(entity.Id))
+                {
+                    db.DanhSachKhenThuong.Remove(entity);
+                    dsSua.Remove(entity);
+                }
+            }
+            foreach (var item in dsKhenThuong)
+            {
+                dsSua.Add(item);
+            }
+        }
+
+        protected void btThemKhenThuong_Click(object sender, EventArgs e)
+        {
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+            List<KhenThuong> dsKhenThuong = LayDanhSachKhenThuong();
+            dsKhenThuong.Add(new KhenThuong());
+            gvKhenThuong.DataSource = dsKhenThuong;
+            gvKhenThuong.DataBind();
+        }
+
+        protected void gvKhenThuong_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridView gvKhenThuong = (GridView)frmMain.FindControl("gvKhenThuong");
+            List<KhenThuong> dsKhenThuong = LayDanhSachKhenThuong();
+            dsKhenThuong.RemoveAt(e.RowIndex);
+            gvKhenThuong.DataSource = dsKhenThuong;
+            gvKhenThuong.DataBind();
+        }
+
+        #endregion
+
         #region NguoiThan
 
         protected List<NguoiThan> LayDanhSachNguoiThan()
