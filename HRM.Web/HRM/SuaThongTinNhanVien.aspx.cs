@@ -905,6 +905,9 @@ namespace HRM.Web.HRM
                     SuaDanhSachHocVan(nhanVien.TrinhDo, db);
                     SuaDanhSachBangCap(nhanVien.BangCapKhac, db);
                     SuaDanhSachCongTac(nhanVien.QuaTrinhCongTac, db);
+                    SuaDanhSachTangLuong(nhanVien.QuaTrinhTangLuong, db);
+                    SuaDanhSachKhenThuong(nhanVien.QuaTrinhKhenThuong, db);
+                    SuaDanhSachKyLuat(nhanVien.QuaTrinhKyLuat, db);
                     SuaDanhSachNguoiThan(nhanVien.NguoiThan, db);
 
                     DropDownList phongTo = (DropDownList)frmMain.FindControl("ddlPhongTo");
