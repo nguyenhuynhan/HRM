@@ -63,9 +63,22 @@
                             <asp:Label ID="lblChucVu" runat="server" Text="Chức vụ, nhiệm vụ: " CssClass="field-title"></asp:Label>
                             <asp:Label ID="ddlChucVu" runat="server" Text='<%# BindItem.ChucVu %>'></asp:Label>
                         </div>
+                        <div class="form-group" runat="server" visible='<%# !string.IsNullOrEmpty(Item.NgayThamGiaCachMang) %>'>
+                            <asp:Label runat="server" Text="Ngày vào Đoàn: " CssClass="field-title"></asp:Label>
+                            <asp:Label runat="server" Text='<%# Item.NgayTangLuong %>'></asp:Label>
+                        </div>
                         <div class="form-group">
                             <asp:Label ID="lblHeSoLuong" runat="server" Text="Ngày vào công ty: " CssClass="field-title"></asp:Label>
                             <asp:Label ID="HeSoLuong" runat="server" Text='<%# BindItem.NgayVaoCongTy %>'></asp:Label>
+                        </div>
+                        <div class="form-group" runat="server" visible='<%# !string.IsNullOrEmpty(Item.NgayVaoDang) %>'>
+                            <asp:Label runat="server" Text="Ngày vào Đảng: " CssClass="field-title"></asp:Label>
+                            <asp:Label runat="server" Text='<%# Item.NgayVaoDang %>'></asp:Label>
+                        </div>
+                        <div class="form-group" runat="server" visible='<%# !string.IsNullOrEmpty(Item.LyLuanChinhTri) %>'>
+                            <asp:Label runat="server" Text='Lý luận chính trị: ' CssClass="field-title"></asp:Label>
+                            <asp:Label runat="server" Text='<%# Item.LyLuanChinhTri %>'></asp:Label>
+                            <asp:Label runat="server" Text='<%# " (" + Item.GhiChuChinhTri + ")" %>' visible='<%# !string.IsNullOrEmpty(Item.GhiChuChinhTri) %>'></asp:Label>
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lblDienThoai" runat="server" Text="Điện thoại: " CssClass="field-title"></asp:Label>

@@ -165,7 +165,7 @@
                 <asp:HiddenField ID="HiddenField1" runat="server" Value="<%#Item.QueQuan.Id %>" />
                 <div class="col-md-4">
                     <div class="form-group">
-                        <asp:Label ID="lblQueQuan" runat="server" Text="Thường trú" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="lblQueQuan" runat="server" Text="Quê quán" CssClass="field-title"></asp:Label><br />
                         <asp:TextBox ID="txtQueQuanXa" runat="server" CssClass="form-control" placeholder="Địa chỉ" Text="<%# BindItem.QueQuan.Xa %>"></asp:TextBox>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
             </div>
-            <asp:Panel ID="pnThuongTru" runat="server" CssClass="row" Visible="False">
+            <asp:Panel ID="pnThuongTru" runat="server" CssClass="row">
                 <asp:HiddenField ID="Id" runat="server" Value="<%#Item.HienTai.Id %>" />
                 <div class="col-md-4">
                     <div class="form-group">
@@ -203,13 +203,6 @@
                     </div>
                 </div>
             </asp:Panel>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <asp:Button ID="btThemChoOHienNay" runat="server" Text="Thêm địa chỉ hiện tại (nếu khác)" CssClass="btn btn-info" OnClick="btThemChoOHienNay_Click" CausesValidation="false" />
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">

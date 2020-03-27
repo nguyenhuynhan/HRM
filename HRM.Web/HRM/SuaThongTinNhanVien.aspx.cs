@@ -30,24 +30,6 @@ namespace HRM.Web.HRM
             return null;
         }
 
-        protected void btThemChoOHienNay_Click(object sender, EventArgs e)
-        {
-            Button btThemChoOHienNay = (Button)sender;
-            Panel pnThuongTru = (Panel)frmMain.FindControl("pnThuongTru");
-            if (pnThuongTru.Visible == false)
-            {
-                btThemChoOHienNay.Text = "Xóa địa chỉ hiện nay";
-                btThemChoOHienNay.CssClass = "btn btn-warning";
-                pnThuongTru.Visible = true;
-            }
-            else
-            {
-                btThemChoOHienNay.Text = "Thêm địa chỉ hiện tại (nếu khác)";
-                btThemChoOHienNay.CssClass = "btn btn-info";
-                pnThuongTru.Visible = false;
-            }
-        }
-
         private string ProcessAvatar(string HinhAnh)
         {
             try
