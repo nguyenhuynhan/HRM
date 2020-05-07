@@ -60,7 +60,7 @@
                             </asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblChucVu" runat="server" Text="Chức vụ, nhiệm vụ: " CssClass="field-title"></asp:Label>
+                            <asp:Label ID="lblChucVu" runat="server" Text="Chức vụ: " CssClass="field-title"></asp:Label>
                             <asp:Label ID="ddlChucVu" runat="server" Text='<%# BindItem.ChucVu %>'></asp:Label>
                         </div>
                         <div class="form-group" runat="server" visible='<%# !string.IsNullOrEmpty(Item.NgayThamGiaCachMang) %>'>
@@ -158,7 +158,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             DataSource='<%#Item.QuaTrinhCongTac %>'>
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Quyết định điều động, bổ nhiệm">
                                     <ItemTemplate>
                                         <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
                                     </ItemTemplate>
@@ -182,14 +182,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Diễn biến tăng lương" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Nâng lương" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="gvTangLuong" runat="server"
                                       AutoGenerateColumns="False"
                                       ItemType="HRM.DataModel.TangLuong"
                                       CssClass="table table-striped table-hover table-noborder"
                                       DataSource='<%#Item.QuaTrinhTangLuong %>'>
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Số quyết định">
                                     <ItemTemplate>
                                         <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
                                     </ItemTemplate>
@@ -220,7 +220,7 @@
                                       CssClass="table table-striped table-hover table-noborder"
                                       DataSource='<%#Item.QuaTrinhKhenThuong %>'>
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Năm">
                                     <ItemTemplate>
                                         <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
                                     </ItemTemplate>
@@ -251,7 +251,7 @@
                                         CssClass="table table-striped table-hover table-noborder"
                                         DataSource='<%#Item.QuaTrinhKyLuat %>'>
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Năm">
                                     <ItemTemplate>
                                         <asp:Label ID="ThoiGian" runat="server" Text='<%# Item.ThoiGian %>'></asp:Label>
                                     </ItemTemplate>
@@ -275,7 +275,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="Label1" runat="server" Text="Người thân" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="Label1" runat="server" Text="Quan hệ cha, mẹ ruột, chồng, vợ, con" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="NguoiThan" runat="server" AutoGenerateColumns="False" ItemType="HRM.DataModel.NguoiThan"
                             DataSource='<%# Item.NguoiThan %>' CssClass="table table-striped table-hover table-noborder" ShowHeader="false">
                             <Columns>

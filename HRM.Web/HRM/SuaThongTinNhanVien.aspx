@@ -352,7 +352,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Diễn biến tăng lương" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Nâng lương" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="gvTangLuong" runat="server"
                             AutoGenerateColumns="False"
                             ItemType="HRM.DataModel.TangLuong"
@@ -361,7 +361,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvTangLuong_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Số quyết định">
                                     <ItemTemplate>
                                         <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
@@ -387,7 +387,7 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                        <asp:Button ID="btThemTangLuong" runat="server" Text="Thêm diễn biến tăng lương" CssClass="btn btn-info" OnClick="btThemTangLuong_Click" CausesValidation="false" />
+                        <asp:Button ID="btThemTangLuong" runat="server" Text="Thêm nâng lương" CssClass="btn btn-info" OnClick="btThemTangLuong_Click" CausesValidation="false" />
                     </div>
                 </div>
             </div>
@@ -404,7 +404,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvKhenThuong_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Năm">
                                     <ItemTemplate>
                                         <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
@@ -447,7 +447,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvKyLuat_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Năm">
                                     <ItemTemplate>
                                         <asp:HiddenField ID="Id" runat="server" Value="<%#Item.Id %>" />
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
@@ -481,7 +481,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="lbNguoiThan" runat="server" Text="Người thân" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="lbNguoiThan" runat="server" Text="Quan hệ cha, mẹ ruột, chồng, vợ, con" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="NguoiThan" runat="server"
                             AutoGenerateColumns="False"
                             ItemType="HRM.DataModel.NguoiThan"

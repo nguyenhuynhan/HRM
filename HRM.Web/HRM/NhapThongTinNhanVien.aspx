@@ -312,7 +312,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvCongTac_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Quyết định điều động, bổ nhiệm">
                                     <ItemTemplate>
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian công tác" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -345,7 +345,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Diễn biến tăng lương" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="lbQuaTrinhTangLuong" runat="server" Text="Nâng lương" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="gvTangLuong" runat="server"
                             AutoGenerateColumns="False"
                             ItemType="HRM.DataModel.TangLuong"
@@ -354,7 +354,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvTangLuong_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Số quyết định">
                                     <ItemTemplate>
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian tăng lương" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -379,7 +379,7 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                        <asp:Button ID="btThemTangLuong" runat="server" Text="Thêm diễn biến tăng lương" CssClass="btn btn-info" OnClick="btThemTangLuong_Click" CausesValidation="false" />
+                        <asp:Button ID="btThemTangLuong" runat="server" Text="Thêm nâng lương" CssClass="btn btn-info" OnClick="btThemTangLuong_Click" CausesValidation="false" />
                     </div>
                 </div>
             </div>
@@ -396,7 +396,7 @@
                             CssClass="table table-striped table-hover table-noborder"
                             OnRowDeleting="gvKhenThuong_RowDeleting">
                             <Columns>
-                                <asp:TemplateField HeaderText="Khoảng thời gian">
+                                <asp:TemplateField HeaderText="Năm">
                                     <ItemTemplate>
                                         <asp:TextBox ID="ThoiGian" runat="server" CssClass="form-control" Text="<%#BindItem.ThoiGian %>"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="valThoiGian" runat="server" ErrorMessage="Chưa nhập khoảng thời gian khen thưởng" ControlToValidate="ThoiGian" CssClass="validation-text" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -471,7 +471,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <asp:Label ID="Label1" runat="server" Text="Người thân" CssClass="field-title"></asp:Label><br />
+                        <asp:Label ID="Label1" runat="server" Text="Quan hệ cha, mẹ ruột, chồng, vợ, con" CssClass="field-title"></asp:Label><br />
                         <asp:GridView ID="NguoiThan" runat="server"
                             AutoGenerateColumns="False"
                             ItemType="HRM.DataModel.NguoiThan"
